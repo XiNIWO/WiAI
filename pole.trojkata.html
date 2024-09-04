@@ -1,96 +1,15 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obliczanie pola trójkąta</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+function oblicz(a, b, c){
+ 
+        var p = (a-b+c) / 2;
+ 
+        if( (p-a < 0) || (p-b < 0) || (p-c < 0) ){
+            document.write("Trójkąt o bokach a,b,c nie istnieje!");
+        }else{
+ 
+            var x = ( p * (p-a) * (p-b) * (p-c) );
+            var s = Math.sqrt(x);
+            document.write("Pole trójkąta: " + s);
+ 
         }
-
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .result {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Oblicz pole trójkąta</h2>
-        <label for="sideA">Długość boku A:</label>
-        <input type="number" id="sideA" placeholder="Podaj długość boku A" required>
-
-        <label for="sideB">Długość boku B:</label>
-        <input type="number" id="sideB" placeholder="Podaj długość boku B" required>
-
-        <label for="sideC">Długość boku C:</label>
-        <input type="number" id="sideC" placeholder="Podaj długość boku C" required>
-
-        <button onclick="calculateArea()">Oblicz pole</button>
-
-        <div class="result" id="result"></div>
-    </div>
-
-    <script>
-        function calculateArea() {
-            // Pobranie wartości boków
-            const a = parseFloat(document.getElementById('sideA').value);
-            const b = parseFloat(document.getElementById('sideB').value);
-            const c = parseFloat(document.getElementById('sideC').value);
-
-            // Sprawdzenie, czy boki tworzą trójkąt
-            if (a + b > c && a + c > b && b + c > a) {
-                // Obliczenie połowy obwodu (s)
-                const s = (a + b + c) / 2;
-
-                // Obliczenie pola za pomocą wzoru Herona
-                const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-
-                // Wyświetlenie wyniku
-                document.getElementById('result').textContent = `Pole trójkąta wynosi: ${area.toFixed(2)} jednostek kwadratowych.`;
-            } else {
-                document.getElementById('result').textContent = 'Podane długości boków nie tworzą trójkąta.';
-            }
-        }
-    </script>
-</body>
-</html>
+ 
+    }
