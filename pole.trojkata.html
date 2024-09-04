@@ -1,15 +1,15 @@
-function oblicz(a, b, c){
- 
-        var p = (a-b+c) / 2;
- 
-        if( (p-a < 0) || (p-b < 0) || (p-c < 0) ){
-            document.write("Trójkąt o bokach a,b,c nie istnieje!");
-        }else{
- 
-            var x = ( p * (p-a) * (p-b) * (p-c) );
-            var s = Math.sqrt(x);
-            document.write("Pole trójkąta: " + s);
- 
-        }
- 
-    }
+<script>
+var a=prompt("Podaj wartość a",a);
+var b=prompt("Podaj wartość b",b);
+var c=prompt("Podaj wartość c",c);
+p=(a+b-c)/2
+if (p-a < 0 || p-b < 0 || p-c < 0)
+{
+document.write("Trójkąt o podanych bokach a,b,c nie istnieje")
+}
+if (p+a > 0 || p+b > 0 || p+c > 0)
+{
+s= Math.sqrt(p*(p-a)*(p-b)*(p-c))
+document.write(s);
+}
+</script>
