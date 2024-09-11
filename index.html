@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator pola trójkąta</title>
+    <title>Kalkulator pola</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 20px;
         }
         input, button {
             margin: 10px;
@@ -24,31 +24,73 @@
             margin-top: 10px;
             font-weight: bold;
         }
+        .calculator {
+            margin: 20px;
+        }
+        .figure {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <h2>Kalkulator pola trójkąta</h2>
-<input type="number" id="a" placeholder="Bok a">
-<input type="number" id="b" placeholder="Bok b">
-<input type="number" id="c" placeholder="Bok c">
-<br>
-<button onclick="obliczPole()">Oblicz pole</button>
-<div class="result" id="wynik"></div>
+<div class="calculator">
+    <input type="number" id="a" placeholder="Bok a">
+    <input type="number" id="b" placeholder="Bok b">
+    <input type="number" id="c" placeholder="Bok c">
+    <br>
+    <button onclick="obliczPoleTrojkata()">Oblicz pole trójkąta</button>
+    <div class="result" id="wynikTrojkat"></div>
+</div>
+
+<!-- Grafika trójkąta -->
+<div class="figure">
+    <svg width="200" height="150">
+        <polygon points="100,10 10,140 190,140" style="fill:lightblue;stroke:black;stroke-width:2" />
+    </svg>
+</div>
+
+<h2>Kalkulator pola prostokąta</h2>
+<div class="calculator">
+    <input type="number" id="dlugosc" placeholder="Długość">
+    <input type="number" id="szerokosc" placeholder="Szerokość">
+    <br>
+    <button onclick="obliczPoleProstokata()">Oblicz pole prostokąta</button>
+    <div class="result" id="wynikProstokat"></div>
+</div>
+
+<!-- Grafika prostokąta -->
+<div class="figure">
+    <svg width="200" height="100">
+        <rect width="180" height="80" style="fill:lightgreen;stroke:black;stroke-width:2" />
+    </svg>
+</div>
 
 <script>
-function obliczPole() {   
-    // Pobiera wartość wprowadzoną przez użytkownika w polu a i konwertuje ją na liczbę zmiennoprzecinkową
+function obliczPoleTrojkata() {
     var a = parseFloat(document.getElementById('a').value);
     var b = parseFloat(document.getElementById('b').value);
     var c = parseFloat(document.getElementById('c').value);
- 
+
     if (a && b && c && a + b > c && a + c > b && b + c > a) {
         var s = (a + b + c) / 2;
         var pole = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-        document.getElementById('wynik').textContent = "Pole: " + pole.toFixed(2);//Zaokrągla wynik do dwóch miejsc po przecinku.
+        document.getElementById('wynikTrojkat').textContent = "Pole trójkąta: " + pole.toFixed(2);//zaokragla do 2 miejsca po przecinku
     } else {
-        document.getElementById('wynik').textContent = "Niepoprawne dane.";
+        document.getElementById('wynikTrojkat').textContent = "Niepoprawne dane.";
+    }
+}
+
+function obliczPoleProstokata() {
+    var dlugosc = parseFloat(document.getElementById('dlugosc').value);
+    var szerokosc = parseFloat(document.getElementById('szerokosc').value);
+
+    if (dlugosc && szerokosc) {
+        var pole = dlugosc * szerokosc;
+        document.getElementById('wynikProstokat').textContent = "Pole prostokąta: " + pole.toFixed(2);//zaokragla do 2 miejsca po przecinku
+    } else {
+        document.getElementById('wynikProstokat').textContent = "Niepoprawne dane.";
     }
 }
 </script>
