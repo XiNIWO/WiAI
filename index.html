@@ -37,15 +37,16 @@
 <div class="result" id="wynik"></div>
 
 <script>
-function obliczPole() {
+function obliczPole() {   
+    // Pobiera wartość wprowadzoną przez użytkownika w polu a i konwertuje ją na liczbę zmiennoprzecinkową
     var a = parseFloat(document.getElementById('a').value);
     var b = parseFloat(document.getElementById('b').value);
     var c = parseFloat(document.getElementById('c').value);
-
+ 
     if (a && b && c && a + b > c && a + c > b && b + c > a) {
         var s = (a + b + c) / 2;
         var pole = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-        document.getElementById('wynik').textContent = "Pole: " + pole.toFixed(2);
+        document.getElementById('wynik').textContent = "Pole: " + pole.toFixed(2);//Zaokrągla wynik do dwóch miejsc po przecinku.
     } else {
         document.getElementById('wynik').textContent = "Niepoprawne dane.";
     }
