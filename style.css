@@ -1,0 +1,25 @@
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .calculator {
+            margin: 20px;
+        }
+        .figure {
+            margin-top: 20px;
+        }
