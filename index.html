@@ -8,62 +8,85 @@
 </head>
 <body>
 
+<!-- Kalkulator pola trójkąta -->
 <h2>Kalkulator pola trójkąta</h2>
 <div class="calculator">
+    <!-- Pola wprowadzania dla boków trójkąta -->
     <input type="number" id="a" placeholder="Bok a">
     <input type="number" id="b" placeholder="Bok b">
     <input type="number" id="c" placeholder="Bok c">
     <br>
+    <!-- Przycisk do obliczania pola trójkąta -->
     <button onclick="obliczPoleTrojkata()">Oblicz pole trójkąta</button>
+    <!-- Wyświetlanie wyniku obliczeń dla trójkąta -->
     <div class="result" id="wynikTrojkat"></div>
 </div>
 
-<!-- Grafika trójkąta -->
+<!-- Grafika trójkąta wykonana za pomocą SVG -->
 <div class="figure">
     <svg width="200" height="150">
-        <polygon points="100,10 10,140 190,140" style="fill:lightblue;stroke:black;stroke-width:2" />
+        <!-- Rysowanie trójkąta za pomocą współrzędnych -->
+        <polygon points="100,10 10,140 190,140" style="fill:none;stroke:#fff;stroke-width:2" />
     </svg>
 </div>
 
+<!-- Kalkulator pola prostokąta -->
 <h2>Kalkulator pola prostokąta</h2>
 <div class="calculator">
+    <!-- Pola wprowadzania dla długości i szerokości prostokąta -->
     <input type="number" id="dlugosc" placeholder="Długość">
     <input type="number" id="szerokosc" placeholder="Szerokość">
     <br>
+    <!-- Przycisk do obliczania pola prostokąta -->
     <button onclick="obliczPoleProstokata()">Oblicz pole prostokąta</button>
+    <!-- Wyświetlanie wyniku obliczeń dla prostokąta -->
     <div class="result" id="wynikProstokat"></div>
 </div>
 
-<!-- Grafika prostokąta -->
+<!-- Grafika prostokąta wykonana za pomocą SVG -->
 <div class="figure">
     <svg width="200" height="100">
-        <rect width="180" height="80" style="fill:lightgreen;stroke:black;stroke-width:2" />
+        <!-- Rysowanie prostokąta -->
+        <rect width="180" height="80" style="fill:none;stroke:#fff;stroke-width:2" />
     </svg>
 </div>
 
 <script>
+/* Funkcja do obliczania pola trójkąta na podstawie wzoru Herona */
 function obliczPoleTrojkata() {
+    // Pobranie wartości boków trójkąta z inputów
     var a = parseFloat(document.getElementById('a').value);
     var b = parseFloat(document.getElementById('b').value);
     var c = parseFloat(document.getElementById('c').value);
 
+    // Sprawdzenie czy wartości boków są poprawne i czy mogą utworzyć trójkąt
     if (a && b && c && a + b > c && a + c > b && b + c > a) {
+        // Obliczenie połowy obwodu
         var s = (a + b + c) / 2;
+        // Wzór Herona na pole trójkąta
         var pole = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-        document.getElementById('wynikTrojkat').textContent = "Pole trójkąta: " + pole.toFixed(2);//zaokragla do 2 miejsca po przecinku
+        // Wyświetlenie wyniku z zaokrągleniem do dwóch miejsc po przecinku
+        document.getElementById('wynikTrojkat').textContent = "Pole trójkąta: " + pole.toFixed(2);
     } else {
+        // Wyświetlenie komunikatu o błędnych danych
         document.getElementById('wynikTrojkat').textContent = "Niepoprawne dane.";
     }
 }
 
+/* Funkcja do obliczania pola prostokąta (długość * szerokość) */
 function obliczPoleProstokata() {
+    // Pobranie wartości długości i szerokości prostokąta z inputów
     var dlugosc = parseFloat(document.getElementById('dlugosc').value);
     var szerokosc = parseFloat(document.getElementById('szerokosc').value);
 
+    // Sprawdzenie czy wartości są poprawne
     if (dlugosc && szerokosc) {
+        // Obliczenie pola prostokąta
         var pole = dlugosc * szerokosc;
-        document.getElementById('wynikProstokat').textContent = "Pole prostokąta: " + pole.toFixed(2);//zaokragla do 2 miejsca po przecinku
+        // Wyświetlenie wyniku z zaokrągleniem do dwóch miejsc po przecinku
+        document.getElementById('wynikProstokat').textContent = "Pole prostokąta: " + pole.toFixed(2);
     } else {
+        // Wyświetlenie komunikatu o błędnych danych
         document.getElementById('wynikProstokat').textContent = "Niepoprawne dane.";
     }
 }
