@@ -1,25 +1,54 @@
+ /* Ogólne ustawienia strony */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 10px;
+            background-color: #000; /* Czarne tło */
+            color: #ddd; /* Jasnoszary tekst */
+            margin-top: 20px;
         }
+
+        /* Style dla inputów i przycisków */
         input, button {
             margin: 10px;
             padding: 10px;
+            background-color: #333; /* Ciemnoszare tło inputów */
+            color: #fff; /* Biały tekst */
+            border: none;
+            outline: none;
+            border-radius: 5px; /* Zaokrąglone rogi */
         }
+
+        /* Style dla przycisków */
         button {
-            background-color: black;
-            color: white;
-            border: 3px;
-            cursor: pointer;
+            background-color: #555; /* Szare tło przycisku */
+            cursor: pointer; /* Zmiana kursora na wskaźnik przy najechaniu */
         }
+
+        /* Zmiana koloru przycisku na hover (przy najechaniu myszką) */
+        button:hover {
+            background-color: #777; /* Jaśniejszy szary na hover */
+        }
+
+        /* Styl dla wyniku wyświetlanego pod kalkulatorem */
         .result {
             margin-top: 10px;
             font-weight: bold;
+            color: #fff; /* Białe wyniki */
         }
+
+        /* Margines dla sekcji kalkulatora */
         .calculator {
-            margin: 10px;
+            margin: 20px;
         }
+
+        /* Styl dla sekcji rysunków figur */
         .figure {
-            margin-top: 10px;
+            margin-top: 20px;
+        }
+
+        /* Style dla grafik SVG */
+        svg {
+            background-color: #222; /* Ciemne tło dla figur */
+            border: 2px solid #fff; /* Biały obrys figur */
+            border-radius: 10px; /* Zaokrąglone rogi SVG */
         }
