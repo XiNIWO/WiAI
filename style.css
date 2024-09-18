@@ -1,4 +1,5 @@
- /* Ogólne ustawienia strony */
+
+        /* Ogólne ustawienia strony */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -43,7 +44,7 @@
 
         /* Styl dla sekcji rysunków figur */
         .figure {
-            margin-top: 5px;
+            margin-top: 20px;
         }
 
         /* Style dla grafik SVG */
@@ -51,4 +52,11 @@
             background-color: #222; /* Ciemne tło dla figur */
             border: 2px solid #fff; /* Biały obrys figur */
             border-radius: 10px; /* Zaokrąglone rogi SVG */
+            margin-bottom: 20px;
+        }
+
+        /* Styl tekstu w SVG (oznaczenie boków) */
+        svg text {
+            fill: #fff; /* Biały kolor tekstu */
+            font-size: 14px; /* Rozmiar tekstu */
         }
