@@ -50,7 +50,6 @@
         /* Style dla grafik SVG */
         svg {
             background-color: #222; /* Ciemne tło dla figur */
-            border: 2px solid #fff; /* Biały obrys figur */
             border-radius: 10px; /* Zaokrąglone rogi SVG */
             margin-bottom: 20px;
         }
